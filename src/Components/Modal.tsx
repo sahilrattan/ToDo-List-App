@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 
 interface EditTaskModalProps {
   isOpen: boolean;
@@ -36,26 +37,14 @@ const EditTaskModal: React.FC<EditTaskModalProps> = ({
                 onChange={(e) => onChange(e.target.value)}
                 className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
                 autoFocus
-                onKeyPress={(e) => e.key === 'Enter' && onConfirm()}
+                onKeyDown={(e) => e.key === 'Enter' && onConfirm()}
               />
             </div>
           </div>
         </div>
         <div className="mt-5 flex justify-end">
-          <button
-            type="button"
-            className="mr-3 px-4 py-2 bg-white border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50"
-            onClick={onCancel}
-          >
-            Cancel
-          </button>
-          <button
-            type="button"
-            className="px-4 py-2 bg-blue-600 border border-transparent rounded-md text-white hover:bg-blue-700"
-            onClick={onConfirm}
-          >
-            Save
-          </button>
+         <Button className='mr-3 px-4 py-2 bg-white border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50'  onClick={onCancel}>Cancel</Button>
+         <Button className='px-4 py-2 bg-blue-600 border border-transparent rounded-md text-white hover:bg-blue-700' onClick={onConfirm}>Save</Button>
         </div>
       </div>
     </div>

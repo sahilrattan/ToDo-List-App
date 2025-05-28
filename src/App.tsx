@@ -1,11 +1,11 @@
 import './App.css'
-import ToDo1 from './Components/ToDo1'
+import ToDo from './Components/ToDo'
 
 function App() {
 
   return (
 <div>
-  <ToDo1/>
+  <ToDo/>
   
 </div>
   )
